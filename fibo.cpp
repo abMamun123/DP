@@ -7,18 +7,21 @@ using namespace std;
 long long arr[101];
 long long fibo(int n)
 {
-    if (n <= 2)
+    if (n == 0)
+        return 0;
+    if (n == 1 || n == 2)
         return 1;
     if (arr[n] != 0)
     {
         return arr[n];
     }
-    arr[n] = fibo(n - 1) + fibo(n - 2);
+    arr[n] = fibo(n - 1) + fibo(n - 2) + fibo(n - 3);
     return arr[n];
 }
 int main()
 {
-    cout << (fibo(5)) << "\n";
-    cout << (fibo(50)) << "\n";
+    int n;
+    cin >> n;
+    cout << (fibo(n)) << "\n";
     return 0;
 }
